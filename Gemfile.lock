@@ -85,6 +85,8 @@ GEM
     crass (1.0.6)
     date (3.3.3)
     debug (1.7.1)
+    dockerfile-rails (1.2.5)
+      rails
     erubi (1.12.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
@@ -122,6 +124,9 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.14.2-x86_64-darwin)
       racc (~> 1.4)
+    nokogiri (1.14.2-x86_64-linux)
+      racc (~> 1.4)
+    pg (1.4.6)
     public_suffix (5.0.1)
     puma (5.6.5)
       nio4r (~> 2.0)
@@ -172,6 +177,7 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     sqlite3 (1.6.1-x86_64-darwin)
+    sqlite3 (1.6.1-x86_64-linux)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
     thor (1.2.1)
@@ -201,13 +207,16 @@ GEM
 
 PLATFORMS
   x86_64-darwin-20
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
   capybara
   debug
+  dockerfile-rails (>= 1.2)
   importmap-rails
   jbuilder
+  pg (~> 1.4)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.2)
   redis (~> 4.0)
