@@ -17,7 +17,7 @@ module Api
           when Line::Bot::Event::MessageType::Text
             message = {
               type: 'text',
-              text: generate_text(event.message['text'])
+              text: generate_text(event.message['text'], event.source['userId'])
             }
             client.reply_message(event['replyToken'], message)
           end
@@ -36,9 +36,9 @@ module Api
         }
       end
 
-      def generate_text(prompt)
+      def generate_text(prompt, line_user_id)
         gpt_client = GptClient.new(Rails.application.credentials.openai[:access_token])
-        gpt_client.generate_text(prompt)
+        gpt_client.generate_text(prompt, line_user_id)
       end
   end
 end
