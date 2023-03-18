@@ -2,7 +2,6 @@ require 'openai'
 
 class GptClient
   def initialize(access_token)
-    @access_token = access_token
     @client = OpenAI::Client.new(access_token: access_token)
   end
 
