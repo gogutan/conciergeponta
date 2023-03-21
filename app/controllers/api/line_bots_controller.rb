@@ -17,7 +17,7 @@ module Api
           when Line::Bot::Event::MessageType::Text
             message = {
               type: 'text',
-              text: generate_text(event.message['text'], event.source['userId'])
+              text: generate_text(event.message['text'], event['source']['userId'])
             }
             client.reply_message(event['replyToken'], message)
           end
