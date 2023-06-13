@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_18_070524) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_12_143130) do
   create_table "chat_logs", force: :cascade do |t|
     t.string "line_user_id", default: "", null: false
     t.integer "role", default: 0, null: false
@@ -19,6 +19,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_18_070524) do
     t.integer "completion_tokens", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "memos", force: :cascade do |t|
+    t.integer "service_type", default: 0, null: false
+    t.string "uid", default: "", null: false
+    t.string "body", default: "", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["body"], name: "index_memos_on_body", unique: true
   end
 
 end
